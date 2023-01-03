@@ -20,6 +20,7 @@ model Article {
   title       String
   description String
   body        String
+  imageUrl    String
   createdAt   DateTime @default(now())
   upadtedAt   DateTime @updatedAt
   userId      String
