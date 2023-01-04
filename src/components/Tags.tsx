@@ -12,7 +12,7 @@ export const Tags = () => {
     return <p>{error.message}</p>;
   }
   return (
-    <div className="mx-auto rounded-2xl bg-gray-100 p-4">
+    <div className="mx-auto min-w-[16rem] rounded-2xl bg-gray-100 p-4">
       <h2 className=" text-2xl font-bold text-gray-700">Popular Tags</h2>
       <div className="mt-4 flex flex-wrap  gap-2">
         {tags.map((tag) => (
