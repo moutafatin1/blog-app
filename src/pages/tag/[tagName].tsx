@@ -1,8 +1,8 @@
 import { ArticleListLayout } from "@/components/Layouts/ArticleListLayout";
 import { Spinner } from "@/components/Spinner";
-import { trpc } from "@/utils/trpc";
 import { useRouter } from "next/router";
 import { ArticleCard } from "src/features/article/components";
+import { useGetArticles } from "src/hooks/useArticles";
 import type { NextPageWithLayout } from "../_app";
 
 const SearchByTagPage: NextPageWithLayout = () => {
@@ -12,7 +12,7 @@ const SearchByTagPage: NextPageWithLayout = () => {
     data: articles,
     isLoading,
     error,
-  } = trpc.article.all.useQuery({
+  } = useGetArticles({
     tagName: typeof tagName === "string" ? tagName : undefined,
   });
   if (isLoading) return <Spinner show={isLoading} />;
