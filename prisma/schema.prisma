@@ -23,8 +23,15 @@ model Article {
   imageUrl    String
   createdAt   DateTime @default(now())
   upadtedAt   DateTime @updatedAt
+  tags        Tag[]
   userId      String
   user        User     @relation(fields: [userId], references: [id])
+}
+
+model Tag {
+  id       String    @id @default(cuid())
+  name     String    @unique
+  articles Article[]
 }
 
 // Necessary for Next auth

@@ -31,6 +31,13 @@ async function seed() {
         slug: `Try-to-transmit-the-HTTP-card-maybe-it-will-override-the-multi-byte-hard-${x}`,
         userId: user.id,
         imageUrl: images[x as keyof typeof images],
+        tags: {
+          create: [
+            {
+              name: `Tag${x}`,
+            },
+          ],
+        },
       },
     });
   });
