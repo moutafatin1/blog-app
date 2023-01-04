@@ -6,14 +6,10 @@ import { useRouter } from "next/router";
 const ArticlePage = () => {
   const router = useRouter();
   const { articleSlug } = router.query;
-  if (!articleSlug || typeof articleSlug !== "string") {
-    return <p>404</p>;
-  }
-  const {
-    data: article,
-    isLoading,
-    error,
-  } = trpc.article.bySlug.useQuery(articleSlug);
+
+  const { data: article, isLoading } = trpc.article.bySlug.useQuery(
+    typeof articleSlug === "string" ? articleSlug : ""
+  );
 
   if (isLoading) {
     return <Spinner show={isLoading} />;
