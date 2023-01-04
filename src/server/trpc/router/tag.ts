@@ -1,7 +1,7 @@
-import { protectedProcedure, router } from "../trpc";
+import { publicProcedure, router } from "../trpc";
 
 export const tagRouter = router({
-  all: protectedProcedure.query(({ ctx }) => {
+  all: publicProcedure.query(({ ctx }) => {
     return ctx.prisma.tag.findMany();
   }),
 });
