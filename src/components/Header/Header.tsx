@@ -7,7 +7,9 @@ export const Header = () => {
   const { data: session, status } = useSession();
   return (
     <header className="mx-auto flex max-w-7xl items-center justify-between py-8">
-      <span className="text-3xl font-bold text-gray-700">Blog App</span>
+      <Link href="/" className="text-3xl font-bold text-gray-700">
+        Blog App
+      </Link>
       <nav className="flex items-center gap-x-8">
         <Link
           href="/"
