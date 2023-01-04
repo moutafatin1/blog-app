@@ -7,7 +7,7 @@ export const ArticlesList = () => {
 
   if (error) return <p>{error.message}</p>;
   return (
-    <div className="mx-auto mt-16 grid max-w-7xl gap-4  sm:grid-cols-2 lg:grid-cols-3">
+    <>
       {isLoading ? (
         <Spinner
           delay={400}
@@ -19,7 +19,6 @@ export const ArticlesList = () => {
           <ArticleCard key={article.id} article={article} />
         ))
       )}
-      {}
-    </div>
+    </>
   );
 };

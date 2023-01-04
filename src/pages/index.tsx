@@ -1,15 +1,17 @@
-import { Header } from "@/components/Header";
-import { Hero } from "@/components/Hero";
+import { ArticleListLayout } from "@/components/Layouts/ArticleListLayout";
 import { ArticlesList } from "src/features/article/components/ArticlesList";
+import type { NextPageWithLayout } from "./_app";
 
-const Home = () => {
+const Home: NextPageWithLayout = () => {
   return (
-    <div className="p-4">
-      <Header />
-      <Hero />
+    <>
       <ArticlesList />
-    </div>
+    </>
   );
 };
 
 export default Home;
+
+Home.getLayout = (page) => {
+  return <ArticleListLayout>{page}</ArticleListLayout>;
+};

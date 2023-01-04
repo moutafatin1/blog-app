@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .tabItem {
+    @apply relative flex items-center gap-x-2  rounded-lg  p-4 font-medium text-gray-700 hover:bg-gray-100/60;
+  }
+  .tabItem::after.active {
+    @apply absolute top-full left-1/2 w-full -translate-x-1/2 rounded-2xl border-b-4 border-indigo-500  content-[""];
+  }
+
+  .tabItem.active {
+    @apply text-indigo-500;
+  }
+
+  .tabItem svg {
+    @apply text-2xl transition group-hover:text-indigo-500;
+  }
+}

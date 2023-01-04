@@ -26,6 +26,9 @@ export const articleRouter = router({
             },
           },
         },
+        orderBy: {
+          createdAt: "desc",
+        },
       });
     }),
   bySlug: publicProcedure.input(z.string()).query(({ ctx, input }) => {
