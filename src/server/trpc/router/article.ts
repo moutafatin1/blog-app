@@ -25,6 +25,7 @@ export const articleRouter = router({
               name: input?.tagName,
             },
           },
+          user: true,
         },
         orderBy: {
           createdAt: "desc",
