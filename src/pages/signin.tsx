@@ -1,5 +1,7 @@
 import { Header } from "@/components/Header";
+import type { GetServerSideProps } from "next";
 import { signIn } from "next-auth/react";
+import { getServerAuthSession } from "src/server/common/get-server-auth-session";
 
 const SignInPage = () => {
   return (
@@ -20,3 +22,19 @@ const SignInPage = () => {
 };
 
 export default SignInPage;
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await getServerAuthSession(context);
+  if (session) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+};
