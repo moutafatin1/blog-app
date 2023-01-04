@@ -1,15 +1,14 @@
 import type { ReactNode } from "react";
-import { ArticlesList } from "src/features/article/components/ArticlesList";
 import { Header } from "../Header";
 import { Hero } from "../Hero";
 import { Tags } from "../Tags";
 import { ViewArticlesBy } from "../ViewArticlesBy";
 
-type ArticleListLayout = {
+type ArticleListLayoutProps = {
   children: ReactNode;
 };
 
-export const ArticleListLayout = ({children}:ArticleListLayout) => {
+export const ArticleListLayout = ({ children }: ArticleListLayoutProps) => {
   return (
     <div className="p-4">
       <Header />
