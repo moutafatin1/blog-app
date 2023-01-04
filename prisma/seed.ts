@@ -34,7 +34,7 @@ async function seed() {
         tags: {
           create: [
             {
-              name: `Tag${x}`,
+              name: `tag${x}`,
             },
           ],
         },
