@@ -1,9 +1,11 @@
+import { ArticleListLayout } from "@/components/Layouts/ArticleListLayout";
 import { Spinner } from "@/components/Spinner";
 import { trpc } from "@/utils/trpc";
 import { useRouter } from "next/router";
 import { ArticleCard } from "src/features/article/components";
+import type { NextPageWithLayout } from "../_app";
 
-const SearchByTagPage = () => {
+const SearchByTagPage: NextPageWithLayout = () => {
   const router = useRouter();
   const { tagName } = router.query;
   const {
@@ -26,3 +28,7 @@ const SearchByTagPage = () => {
 };
 
 export default SearchByTagPage;
+
+SearchByTagPage.getLayout = (page) => (
+  <ArticleListLayout>{page}</ArticleListLayout>
+);
