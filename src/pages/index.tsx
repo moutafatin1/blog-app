@@ -1,11 +1,18 @@
 import { ArticleListLayout } from "@/components/Layouts/ArticleListLayout";
-import { ArticlesList } from "src/features/article/components/ArticlesList";
+import { Spinner } from "@/components/Spinner";
+import { ArticleCard } from "src/features/article/components";
+import { useGetArticles } from "src/hooks/useArticles";
 import type { NextPageWithLayout } from "./_app";
 
 const Home: NextPageWithLayout = () => {
+  const { data: articles, isLoading, error } = useGetArticles();
+  if (isLoading) return <Spinner show={isLoading} />;
+  if (error) return <p>{error.message}</p>;
   return (
     <>
-      <ArticlesList />
+      {articles.map((article) => (
+        <ArticleCard key={article.id} article={article} />
+      ))}
     </>
   );
 };
