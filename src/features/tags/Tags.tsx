@@ -1,6 +1,6 @@
 import { trpc } from "@/utils/trpc";
 import Link from "next/link";
-import { Spinner } from "./Spinner";
+import { Spinner } from "../../components/element/Spinner";
 
 export const Tags = () => {
   const { data: tags, isLoading, error } = trpc.tag.all.useQuery();

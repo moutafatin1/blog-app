@@ -1,7 +1,7 @@
 import { ArticleListLayout } from "@/components/Layouts/ArticleListLayout";
-import { Spinner } from "@/components/Spinner";
-import { ArticleCard } from "src/features/article/components";
-import { useGetArticles } from "src/hooks/useArticles";
+import { Spinner } from "@/components/element/Spinner";
+import { ArticleCard } from "src/features/articles/components";
+import { useGetArticles } from "src/features/articles/hooks/useGetArticles";
 import type { NextPageWithLayout } from "./_app";
 
 const Home: NextPageWithLayout = () => {

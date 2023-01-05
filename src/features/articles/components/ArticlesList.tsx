@@ -1,4 +1,4 @@
-import { Spinner } from "@/components/Spinner";
+import { Spinner } from "@/components/element/Spinner";
 import { trpc } from "@/utils/trpc";
 import { ArticleCard } from "./ArticleCard";
 

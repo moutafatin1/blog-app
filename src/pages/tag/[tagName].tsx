@@ -1,8 +1,8 @@
 import { ArticleListLayout } from "@/components/Layouts/ArticleListLayout";
-import { Spinner } from "@/components/Spinner";
+import { Spinner } from "@/components/element/Spinner";
 import { useRouter } from "next/router";
-import { ArticleCard } from "src/features/article/components";
-import { useGetArticles } from "src/hooks/useArticles";
+import { ArticleCard } from "src/features/articles/components";
+import { useGetArticles } from "src/features/articles/hooks/useGetArticles";
 import type { NextPageWithLayout } from "../_app";
 
 const SearchByTagPage: NextPageWithLayout = () => {

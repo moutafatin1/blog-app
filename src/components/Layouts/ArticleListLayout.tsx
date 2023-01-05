@@ -1,8 +1,8 @@
+import { ViewArticlesBy } from "@/features/articles/components";
 import type { ReactNode } from "react";
+import { Tags } from "../../features/tags/Tags";
 import { Header } from "../Header";
 import { Hero } from "../Hero";
-import { Tags } from "../Tags";
-import { ViewArticlesBy } from "../ViewArticlesBy";
 
 type ArticleListLayoutProps = {
   children: ReactNode;

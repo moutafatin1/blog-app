@@ -1,5 +1,5 @@
 import { Header } from "@/components/Header";
-import { Spinner } from "@/components/Spinner";
+import { Spinner } from "@/components/element/Spinner";
 import { trpc } from "@/utils/trpc";
 import { useRouter } from "next/router";
 
