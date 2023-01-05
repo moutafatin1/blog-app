@@ -18,3 +18,11 @@
     @apply text-2xl transition group-hover:text-indigo-500;
   }
 }
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
