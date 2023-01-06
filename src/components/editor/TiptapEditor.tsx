@@ -9,7 +9,11 @@ import { useEffect, useState } from "react";
 import { EditLink } from "./Link/EditLink";
 import { ToolBar } from "./ToolBar";
 
-export const TiptapEditor = () => {
+export const TiptapEditor = ({
+  setBody,
+}: {
+  setBody: (body: string) => void;
+}) => {
   const [selectRange, setSelectRange] = useState<Range>();
   const editor = useEditor({
     extensions: [
@@ -39,6 +43,10 @@ export const TiptapEditor = () => {
       attributes: {
         class: "prose prose-lg focus:outline-none  mx-auto max-w-full h-full",
       },
+    },
+    onUpdate({ editor }) {
+      const htmlBody = editor.getHTML();
+      setBody(htmlBody);
     },
   });
 

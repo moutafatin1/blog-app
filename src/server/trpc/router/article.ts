@@ -1,5 +1,6 @@
+import slugify from "slugify";
 import { z } from "zod";
-import { publicProcedure, router } from "../trpc";
+import { protectedProcedure, publicProcedure, router } from "../trpc";
 
 export const articleRouter = router({
   all: publicProcedure
@@ -39,4 +40,28 @@ export const articleRouter = router({
       },
     });
   }),
+  new: protectedProcedure
+    .input(
+      z.object({
+        title: z.string(),
+        body: z.string(),
+      })
+    )
+    .mutation(({ ctx, input }) => {
+      return ctx.prisma.article.create({
+        data: {
+          userId: ctx.session.user.id,
+          body: input.body,
+          title: input.title,
+          description: input.body.slice(0, 300),
+          slug: slugify(input.title, {
+            lower: true,
+            strict: true,
+            remove: /[*+~.()'"!:@]/g,
+          }),
+          imageUrl:
+            "https://i.pinimg.com/originals/71/d4/82/71d4820273a3a96774cd386641080e39.png",
+        },
+      });
+    }),
 });

@@ -21,7 +21,7 @@ export const UserMenu = ({ user }: UserMenuProps) => {
       <Popover.Panel className="absolute right-1/2 z-10 w-40   rounded-lg border bg-gray-100 py-2 shadow-md">
         <div className="flex flex-col gap-y-2">
           <Link
-            href="#"
+            href="/article/new"
             className="flex items-center gap-x-2 rounded-lg p-2 transition hover:bg-gray-300/50"
           >
             <HiPencilAlt className="text-xl text-teal-500" />

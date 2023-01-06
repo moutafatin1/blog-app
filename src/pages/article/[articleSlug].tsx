@@ -1,5 +1,5 @@
-import { Header } from "@/components/Header";
 import { Spinner } from "@/components/element/Spinner";
+import { Header } from "@/components/Header";
 import { trpc } from "@/utils/trpc";
 import { useRouter } from "next/router";
 
@@ -40,8 +40,11 @@ const ArticlePage = () => {
           className="absolute right-1/2 h-[35rem] max-w-7xl translate-x-1/2 rounded-2xl"
         />
       </div>
-      <div className="mx-auto mt-[32rem]">
-        <p className="prose mx-auto text-lg">{article.body}</p>
+      <div className="mx-auto mt-[32rem] mb-16">
+        <p
+          className="prose mx-auto text-lg"
+          dangerouslySetInnerHTML={{ __html: article.body }}
+        ></p>
       </div>
     </div>
   );
