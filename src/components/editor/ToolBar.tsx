@@ -15,7 +15,6 @@ import {
 import { RiDoubleQuotesL } from "react-icons/ri";
 import { DropdownOptions } from "../common";
 import { Button } from "./Button";
-import { InsertLink } from "./Link/InsertLink";
 import type { LinkOptions } from "./Link/LinkForm";
 import { getFocusedEditor } from "./utils";
 
@@ -107,7 +106,7 @@ export const ToolBar = ({ editor }: ToolBarProps) => {
         >
           <BsBraces />
         </Button>
-        <InsertLink onSubmit={handleLinkSubmit} />
+        {/* <InsertLink onSubmit={handleLinkSubmit} /> */}
         <Button
           active={editor.isActive("bulletList")}
           onClick={() => getFocusedEditor(editor).toggleBulletList().run()}

@@ -13,14 +13,18 @@ export const DropdownOptions = ({ options, head }: DropdownOptionsProps) => {
     <button
       onBlur={() => setShowOptions(false)}
       onClick={() => setShowOptions(!showOptions)}
-      className="relative"
+      className="relative "
     >
       {head}
       {showOptions && (
-        <div className="border-primary-dark dark:border-primary bg-primary dark:bg-primary-dark absolute top-full right-2 z-10 mt-4 min-w-max rounded border-2 text-left">
-          <ul className="space-y-3 p-3">
+        <div className=" absolute  top-full right-2 z-50 mt-4 min-w-max rounded-lg  bg-indigo-400 text-left">
+          <ul className="space-y-4 p-3">
             {options.map(({ label, onClick }) => (
-              <li key={label} onClick={onClick}>
+              <li
+                key={label}
+                onClick={onClick}
+                className="font-medium text-white transition hover:opacity-75"
+              >
                 {label}
               </li>
             ))}
