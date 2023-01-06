@@ -51,7 +51,7 @@ export const TiptapEditor = () => {
   return (
     <div className=" flex-1 overflow-y-auto rounded-lg bg-slate-50 p-3 shadow-md">
       <ToolBar editor={editor} />
-      <div className="my-3 h-[1px] w-full bg-gray-800"></div>
+      <div className="my-3 h-[1px] w-full bg-gray-400"></div>
       {editor && <EditLink editor={editor} />}
       <EditorContent editor={editor} />
     </div>
