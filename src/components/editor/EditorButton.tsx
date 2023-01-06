@@ -5,7 +5,7 @@ type ButtonProps = {
   active?: boolean;
 } & HTMLAttributes<HTMLButtonElement>;
 
-export const Button = ({
+export const EditorButton = ({
   active,
   className,
   children,

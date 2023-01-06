@@ -14,7 +14,7 @@ import {
 } from "react-icons/bs";
 import { RiDoubleQuotesL } from "react-icons/ri";
 import { DropdownOptions } from "../common";
-import { Button } from "./Button";
+import { EditorButton } from "./EditorButton";
 import type { LinkOptions } from "./Link/LinkForm";
 import { getFocusedEditor } from "./utils";
 
@@ -61,73 +61,73 @@ export const ToolBar = ({ editor }: ToolBarProps) => {
       <DropdownOptions options={options} head={<Head label={getLabel()} />} />
       <div className="mx-8 h-4 w-[1px] bg-zinc-400"></div>
       <div className="flex items-center space-x-3">
-        <Button
+        <EditorButton
           active={editor.isActive("bold")}
           onClick={() => getFocusedEditor(editor).toggleBold().run()}
         >
           <BsTypeBold />
-        </Button>
-        <Button
+        </EditorButton>
+        <EditorButton
           active={editor.isActive("italic")}
           onClick={() => getFocusedEditor(editor).toggleItalic().run()}
         >
           <BsTypeItalic />
-        </Button>
-        <Button
+        </EditorButton>
+        <EditorButton
           active={editor.isActive("underline")}
           onClick={() => getFocusedEditor(editor).toggleUnderline().run()}
         >
           <BsTypeUnderline />
-        </Button>
-        <Button
+        </EditorButton>
+        <EditorButton
           active={editor.isActive("strike")}
           onClick={() => getFocusedEditor(editor).toggleStrike().run()}
         >
           <BsTypeStrikethrough />
-        </Button>
+        </EditorButton>
       </div>
       <div className="mx-8 h-4 w-[1px] bg-zinc-400"></div>
       <div className="flex items-center space-x-3">
-        <Button
+        <EditorButton
           active={editor.isActive("blockquote")}
           onClick={() => getFocusedEditor(editor).toggleBlockquote().run()}
         >
           <RiDoubleQuotesL />
-        </Button>
-        <Button
+        </EditorButton>
+        <EditorButton
           active={editor.isActive("code")}
           onClick={() => getFocusedEditor(editor).toggleCode().run()}
         >
           <BsCode />
-        </Button>
-        <Button
+        </EditorButton>
+        <EditorButton
           active={editor.isActive("codeBlock")}
           onClick={() => getFocusedEditor(editor).toggleCodeBlock().run()}
         >
           <BsBraces />
-        </Button>
+        </EditorButton>
         {/* <InsertLink onSubmit={handleLinkSubmit} /> */}
-        <Button
+        <EditorButton
           active={editor.isActive("bulletList")}
           onClick={() => getFocusedEditor(editor).toggleBulletList().run()}
         >
           <BsListUl />
-        </Button>
-        <Button
+        </EditorButton>
+        <EditorButton
           active={editor.isActive("orderedList")}
           onClick={() => getFocusedEditor(editor).toggleOrderedList().run()}
         >
           <BsListOl />
-        </Button>
+        </EditorButton>
       </div>
       <div className="mx-8 h-4 w-[1px] bg-zinc-400"></div>
       <div className="flex items-center space-x-3">
-        <Button>
+        <EditorButton>
           <BsYoutube />
-        </Button>
-        <Button>
+        </EditorButton>
+        <EditorButton>
           <BsImage />
-        </Button>
+        </EditorButton>
       </div>
     </div>
   );

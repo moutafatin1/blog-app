@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BsLink45Deg } from "react-icons/bs";
-import { Button } from "../Button";
+import { Button } from "../EditorButton";
 import type { LinkOptions } from "./LinkForm";
 import { LinkForm } from "./LinkForm";
 
