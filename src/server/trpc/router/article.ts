@@ -45,6 +45,7 @@ export const articleRouter = router({
       z.object({
         title: z.string(),
         body: z.string(),
+        imageUrl: z.string()
       })
     )
     .mutation(({ ctx, input }) => {
@@ -59,8 +60,7 @@ export const articleRouter = router({
             strict: true,
             remove: /[*+~.()'"!:@]/g,
           }),
-          imageUrl:
-            "https://i.pinimg.com/originals/71/d4/82/71d4820273a3a96774cd386641080e39.png",
+          imageUrl: input.imageUrl,
         },
       });
     }),
