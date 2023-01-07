@@ -37,7 +37,7 @@ export const ArticleCard = ({ article }: ArticleCardProps) => {
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-800">{article.title}</h3>
-            <p className="text-gray-600  line-clamp-3">{article.body}</p>
+            <p className="text-gray-600 line-clamp-3">{article.description}</p>
           </div>
         </div>
         <img
