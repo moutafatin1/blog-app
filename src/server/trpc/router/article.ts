@@ -13,13 +13,15 @@ export const articleRouter = router({
     )
     .query(({ ctx, input }) => {
       return ctx.prisma.article.findMany({
-        where: {
-          tags: {
-            some: {
-              name: input?.tagName,
+        ...(input?.tagName && {
+          where: {
+            tags: {
+              some: {
+                name: input?.tagName,
+              },
             },
           },
-        },
+        }),
         include: {
           tags: {
             where: {
@@ -45,7 +47,7 @@ export const articleRouter = router({
       z.object({
         title: z.string(),
         body: z.string(),
-        imageUrl: z.string()
+        imageUrl: z.string(),
       })
     )
     .mutation(({ ctx, input }) => {
