@@ -41,7 +41,8 @@ export const TiptapEditor = ({
         if (selectionRange) setSelectRange(selectionRange);
       },
       attributes: {
-        class: "prose prose-lg focus:outline-none  mx-auto max-w-full h-full",
+        class:
+          "prose prose-lg focus:outline-none  mx-auto max-w-full min-h-screen",
       },
     },
     onUpdate({ editor }) {
@@ -57,7 +58,7 @@ export const TiptapEditor = ({
   }, [editor, selectRange]);
 
   return (
-    <div className=" flex-1 overflow-y-auto rounded-lg bg-slate-50 p-3 shadow-md">
+    <div className="mb-16 rounded-lg bg-slate-50  p-3 shadow-md">
       <ToolBar editor={editor} />
       <div className="my-3 h-[1px] w-full bg-gray-400"></div>
       {editor && <EditLink editor={editor} />}
