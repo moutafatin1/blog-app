@@ -43,7 +43,7 @@ export const ArticleCard = ({ article }: ArticleCardProps) => {
         <img
           src={article.imageUrl}
           alt={article.title}
-          className="w-1/3 rounded-2xl"
+          className="ml-auto w-1/3 rounded-2xl"
         />
       </div>
       <div className="flex items-center gap-2">
